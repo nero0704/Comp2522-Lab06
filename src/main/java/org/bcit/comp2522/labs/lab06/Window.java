@@ -5,7 +5,6 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 import java.util.Random;
 
-
 /**
  * Flocking: An implementation of Craig Reynold's Boids program to
  * simulate the flocking behavior of birds. Each boid steers itself
@@ -15,17 +14,24 @@ import java.util.Random;
  * @version 1.0
  */
 public class Window extends PApplet {
+
+  Player player;
+  ArrayList<Enemy> enemies;
+
   /**
    * Runs before applet starts.
    */
   public void setup() {
+    player = Player.getInstance();
+    enemies = new ArrayList<>();
   }
 
   /**
    * Runs on each frame.
    */
   public void draw() {
-    background(0);
+    background(20);
+    player.draw(this);
   }
 
   public void settings() {
